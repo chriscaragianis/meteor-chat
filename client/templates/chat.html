@@ -1,0 +1,20 @@
+
+<template name="chat">
+  <div>
+    <h1>Chat #{{chatName}}</h1>
+    <div class="chat-box">
+      <div class="chat-window">
+        {{#each messages}}
+          {{> message }}
+        {{/each}}
+      </div>
+      <div class="guest-list">
+        {{#each chatters}}
+          {{> chatter }}
+        {{/each}}
+      </div>
+      <input class="chat-input" type="text">
+    </div>
+  </div>
+</template>
+

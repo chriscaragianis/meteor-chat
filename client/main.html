@@ -24,29 +24,11 @@
   </li>
 </template>
 
-<template name="chat">
-  <div>
-    <h1>Chat #{{chatName}}</h1>
-    <div class="chat-box">
-      <div class="chat-window">
-        {{#each messages}}
-          {{> message }}
-        {{/each}}
-      </div>
-      <div class="guest-list">
-        {{#each chatters}}
-          {{> chatter }}
-        {{/each}}
-      </div>
-      <input class="chat-input" type="text">
-    </div>
-  </div>
-</template>
-
 <template name="session">
   <h1 class="title">Simple chat</h1>
 
   <div class="form-box">
+    <input type="text" class="name-choice" value="your name">
     <p>
       <button class="new-chat">Start new chat</button>
     </p>
