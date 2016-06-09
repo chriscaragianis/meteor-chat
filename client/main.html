@@ -1,0 +1,53 @@
+<head>
+  <title>simple</title>
+</head>
+
+<body>
+
+  {{#if choosing}}
+    {{> session }}
+  {{/if}}
+
+  {{#if chatting}}
+    {{> chat}}
+  {{/if}}
+</body>
+
+<template name="chatter">
+  <li class="{{style}}">{{name}}</li>
+</template>
+
+<template name="message">
+  <li class="{{style}}">
+    <span class="chat-name">{{name}}</span>
+    <span class="chat-text">{{text}}</span>
+  </li>
+</template>
+
+<template name="chat">
+  <div>
+    <h1>Chat #{{name}}</h1>
+    <div class="chat-box">
+      <div class="chat-window">
+        Chat contents
+      </div>
+      <div class="guest-list">
+        Guest list
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="session">
+  <h1 class="title">Simple chat</h1>
+
+  <div class="form-box">
+    <p>
+      <button class="new-chat">Start new chat</button>
+    </p>
+    <p>
+      <button class="join-chat">Join a chat</button>
+      <input type="text" value="chat code">
+    </p>
+  </div>
+</template>
