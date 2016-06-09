@@ -14,26 +14,31 @@
 </body>
 
 <template name="chatter">
-  <li class="{{style}}">{{name}}</li>
+  <li class="{{style}}">{{chatterName}}</li>
 </template>
 
 <template name="message">
   <li class="{{style}}">
-    <span class="chat-name">{{name}}</span>
-    <span class="chat-text">{{text}}</span>
+    <span class="chat-name">{{messageName}}</span>
+    <span class="chat-text">{{messageText}}</span>
   </li>
 </template>
 
 <template name="chat">
   <div>
-    <h1>Chat #{{name}}</h1>
+    <h1>Chat #{{chatName}}</h1>
     <div class="chat-box">
       <div class="chat-window">
-        Chat contents
+        {{#each messages}}
+          {{> message }}
+        {{/each}}
       </div>
       <div class="guest-list">
-        Guest list
+        {{#each chatters}}
+          {{> chatter }}
+        {{/each}}
       </div>
+      <input class="chat-input" type="text">
     </div>
   </div>
 </template>
@@ -47,7 +52,7 @@
     </p>
     <p>
       <button class="join-chat">Join a chat</button>
-      <input type="text" value="chat code">
+      <input type="text" class="chat-choice" value="chat-code">
     </p>
   </div>
 </template>
