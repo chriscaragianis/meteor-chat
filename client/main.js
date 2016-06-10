@@ -31,6 +31,14 @@ Template.chatter.helpers({
 
 
 Template.body.events({
+  'click .name-choice'(event, instance) {
+    $('.name-choice').val('');
+  },
+
+  'click .chat-choice'(event, instance) {
+    $('.chat-choice').val('');
+  },
+
   'click button.new-chat'(event, instance) {
     Session.set("name", $('.name-choice').val());
     var d = new Date();

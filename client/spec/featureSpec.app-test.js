@@ -11,3 +11,16 @@ describe("entry page has the right components", () => {
     expect($('button.join-chat').text()).toEqual('Join a chat');
   });
 }); 
+
+describe("inputs clear when clicked", () => {
+
+  it("clears the name text", () => {
+    $(".name-choice").click();
+    expect($(".name-choice").val()).toEqual("");
+  });
+
+  it("clears the chat choice text", () => {
+    $(".chat-choice").click();
+    expect($(".chat-choice").val()).toEqual("");
+  });
+});
