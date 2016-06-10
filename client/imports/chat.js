@@ -22,6 +22,7 @@ Template.chat.events({
     if (event.charCode== 13) {
     var _chat = Chats.find({_id: Session.get("chatId")}).fetch();
     _chat[0].messages.push({messageName: Session.get("name"), messageText: $('.chat-input').val()}),
+    $('.chat-input').val('');
     Chats.update(
       {
         _id: Session.get("chatId"),
@@ -33,6 +34,7 @@ Template.chat.events({
           }
       }
     );
+    $('.chat-window').scrollTop($('.chat-window').prop('scrollHeight'));
     }
   },
 });

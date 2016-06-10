@@ -35,7 +35,7 @@ body {
   margin-bottom: 5vh; }
 
 .chat-window {
-  height: 80vh;
+  height: 40vh;
   overflow: auto;
   padding-right: 10px; }
 
@@ -63,3 +63,6 @@ body {
   font-weight: 700;
   color: #444; }
 
+.chat-bottom-spacer {
+  height: 3rem;
+}

@@ -1,5 +1,6 @@
 <head>
   <title>simple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -25,16 +26,17 @@
 </template>
 
 <template name="session">
-  <h1 class="title">Simple chat</h1>
-
-  <div class="form-box">
-    <input type="text" class="name-choice" value="your name">
-    <p>
-      <button class="new-chat">Start new chat</button>
-    </p>
-    <p>
-      <button class="join-chat">Join a chat</button>
-      <input type="text" class="chat-choice" value="chat-code">
-    </p>
+  <div class="container">
+    <h1 class="title">Simple chat</h1>
+    <div class="form-box row">
+      <input type="text" class="name-choice" value="your name">
+      <p>
+        <button class="new-chat">Start new chat</button>
+      </p>
+      <p>
+        <button class="join-chat">Join a chat</button>
+        <input type="text" class="chat-choice" value="chat-code">
+      </p>
+    </div>
   </div>
 </template>
