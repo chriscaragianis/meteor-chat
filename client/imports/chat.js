@@ -7,6 +7,7 @@ Template.chat.helpers({
 
   messages() {
     var _chat = Chats.find({chatName: Session.get("chatName")}).fetch();
+    $('.chat-window').scrollTop($('.chat-window').prop('scrollHeight'));
     return _chat[0].messages;
   },
 
@@ -34,7 +35,6 @@ Template.chat.events({
           }
       }
     );
-    $('.chat-window').scrollTop($('.chat-window').prop('scrollHeight'));
     }
   },
 });
