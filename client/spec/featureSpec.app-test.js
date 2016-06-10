@@ -19,8 +19,20 @@ describe("inputs clear when clicked", () => {
     expect($(".name-choice").val()).toEqual("");
   });
 
+  it("name doesn't clear if user has changed text", () => {
+    $(".name-choice").val('change');
+    $(".name-choice").click();
+    expect($('.name-choice').val()).toEqual('change');
+  });
+
   it("clears the chat choice text", () => {
     $(".chat-choice").click();
     expect($(".chat-choice").val()).toEqual("");
+  });
+
+  it("chat doesn't clear if user has changed text", () => {
+    $(".chat-choice").val('change');
+    $(".chat-choice").click();
+    expect($('.chat-choice').val()).toEqual('change');
   });
 });

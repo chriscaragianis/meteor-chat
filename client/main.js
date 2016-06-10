@@ -2,6 +2,8 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import { Chats } from '../imports/api/chats.js';
+import { Users } from '../imports/api/users.js';
+
 import './main.html';
 import './templates/chat.html';
 import './imports/chat.js'
@@ -32,11 +34,15 @@ Template.chatter.helpers({
 
 Template.body.events({
   'click .name-choice'(event, instance) {
-    $('.name-choice').val('');
+    if ($('.name-choice').val() == 'your name') {
+      $('.name-choice').val('');
+    }
   },
 
   'click .chat-choice'(event, instance) {
-    $('.chat-choice').val('');
+    if($('.chat-choice').val() == 'chat-code') {
+      $('.chat-choice').val('');
+    }
   },
 
   'click button.new-chat'(event, instance) {
@@ -56,7 +62,6 @@ Template.body.events({
   'click button.join-chat'(event, instance) {
     Session.set("name", $('.name-choice').val());
     var _chat = setChat($('.chat-choice').val());
-    console.log(_chat[0]);
     _chat[0].chatters.push({chatterName: Session.get("name")});
     Chats.update({
       _id: _chat[0]._id,
@@ -86,4 +91,3 @@ var setChat = (_chatName) => {
   Session.set("chatName", _chatName);
   return _chat;
 };
-  
