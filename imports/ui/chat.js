@@ -1,4 +1,7 @@
-import { Chats } from '../../imports/api/chats.js';
+import { Chats } from '../api/chats.js';
+
+import './chat.html';
+import './chatter.html';
 
 Template.chat.helpers({
   chatName() {

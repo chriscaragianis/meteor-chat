@@ -1,0 +1,22 @@
+<body>
+
+  {{> authorize}}
+  {{#if currentUser}}
+    {{#if choosing}}
+      {{> session}}
+    {{/if}}
+
+    {{#if chatting}}
+      {{> chat}}
+    {{/if}}
+  {{/if}}
+
+</body>
+
+<template name="message">
+  <li class="{{style}}">
+    <span class="chat-name">{{messageName}}</span>
+    <span class="chat-text">{{messageText}}</span>
+  </li>
+</template>
+
