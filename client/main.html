@@ -5,14 +5,22 @@
 
 <body>
 
-  {{#if choosing}}
-    {{> session }}
+  {{> authorize}}
+  {{#if currentUser}}
+    {{#if choosing}}
+      {{> session }}
+    {{/if}}
+
+    {{#if chatting}}
+      {{> chat}}
+    {{/if}}
   {{/if}}
 
-  {{#if chatting}}
-    {{> chat}}
-  {{/if}}
 </body>
+
+<template name="authorize">
+  {{> loginButtons }}
+</template>
 
 <template name="chatter">
   <li class="{{style}}">{{chatterName}}</li>
@@ -29,7 +37,6 @@
   <div class="container">
     <h1 class="title">Simple chat</h1>
     <div class="form-box row">
-      <input type="text" class="name-choice" value="your name">
       <p>
         <button class="new-chat">Start new chat</button>
       </p>

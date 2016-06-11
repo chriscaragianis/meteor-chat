@@ -22,7 +22,7 @@ Template.chat.events({
     console.log(event);
     if (event.charCode== 13) {
     var _chat = Chats.find({_id: Session.get("chatId")}).fetch();
-    _chat[0].messages.push({messageName: Session.get("name"), messageText: $('.chat-input').val()}),
+    _chat[0].messages.push({messageName: Meteor.user().username, messageText: $('.chat-input').val()}),
     $('.chat-input').val('');
     Chats.update(
       {

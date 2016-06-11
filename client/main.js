@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
@@ -7,10 +8,19 @@ import { Users } from '../imports/api/users.js';
 import './main.html';
 import './templates/chat.html';
 import './imports/chat.js'
+import '../imports/startup/accounts-config.js';
 
 Session.set("state", "choosing");
 
 Template.body.helpers({
+
+  authorizing() {
+    return Session.get("state") === "authorizing";
+  },
+
+  authorized() {
+    return Meteor.user();
+  },
 
   choosing() {
     return Session.get("state") === "choosing";
@@ -51,7 +61,7 @@ Template.body.events({
     var _name = namer();
     Chats.insert({
       chatName: _name,
-      chatters: [{chatterName: "System"}, {chatterName: Session.get("name")}],
+      chatters: [{chatterName: "System"}, {chatterName: Meteor.user().username}],
       createdAt: d,
       messages: [{messageName: "System", messageText: "Created at " + d.toString()}],
     });
@@ -62,7 +72,7 @@ Template.body.events({
   'click button.join-chat'(event, instance) {
     Session.set("name", $('.name-choice').val());
     var _chat = setChat($('.chat-choice').val());
-    _chat[0].chatters.push({chatterName: Session.get("name")});
+    _chat[0].chatters.push({chatterName: Meteor.user().username});
     Chats.update({
       _id: _chat[0]._id,
       },
