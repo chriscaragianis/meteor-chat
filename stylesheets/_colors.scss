@@ -1,0 +1,38 @@
+// _colors.scss (SHARED)
+//
+
+//Color definitions
+$lightgray: #ccc;
+$darkgray: #444;
+$white: #fff;
+$red: #e00;
+$orange: #f90;
+$green: #0f0;
+$blue: #00f;
+
+
+//Color semantics
+$background: $lightgray;
+$window: $white;
+$mod-message-color: $darkgray;
+
+//Main color scheme
+body {
+  background-color: $background;
+}
+
+div.window {
+  background-color: $window;
+}
+
+.red {
+  color: $red;
+}
+
+.blue {
+  color: $blue;
+}
+
+.orange {
+  color: $orange;
+}

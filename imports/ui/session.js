@@ -23,7 +23,7 @@ Template.session.events({
     var _name = namer();
     Chats.insert({
       chatName: _name,
-      chatters: [{chatterName: "System"}, {chatterName: Meteor.user().username}],
+      chatters: ["System", Meteor.user().username],
       createdAt: d,
       messages: [{messageName: "System", messageText: "Created at " + d.toString()}],
     });
@@ -34,7 +34,7 @@ Template.session.events({
   'click button.join-chat'(event, instance) {
     Session.set("name", $('.name-choice').val());
     var _chat = setChat($('.chat-choice').val());
-    _chat[0].chatters.push({chatterName: Meteor.user().username});
+    _chat[0].chatters.push(Meteor.user().username);
     Chats.update({
       _id: _chat[0]._id,
       },

@@ -14,8 +14,8 @@
 </body>
 
 <template name="message">
-  <li class="{{style}}">
-    <span class="chat-name">{{messageName}}</span>
+  <li class="chat {{away}}">
+    <span class="chatter {{nameColor}}">{{messageName}}:&nbsp;</span>
     <span class="chat-text">{{messageText}}</span>
   </li>
 </template>

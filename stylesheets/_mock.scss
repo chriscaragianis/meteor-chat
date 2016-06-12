@@ -1,0 +1,22 @@
+// _mock.sass
+
+//MOCK STYLES --- REMOVE THESE
+
+//Mock colors for names
+$name1-color: $orange;
+$name2-color: $green;
+$mod-name-color: $red;
+
+.name1 {
+  color: $name1-color;
+}
+
+.name2 {
+  color: $name2-color;
+}
+
+.mod-name {
+  color: $mod-name-color;;
+}
+
+//END MOCK STYLES

@@ -1,0 +1,73 @@
+@import 'colors';
+
+@import 'mock';
+
+body {
+  background-color: $background;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+#login-buttons{
+  float: right;
+}
+
+.chat {
+  border: 1px dotted black;
+}
+
+.chat-input{
+  width: 100%;
+  margin-top: 4px;
+}
+
+.chatter {
+  font-weight: bold;
+  display: block;
+}
+
+.chat-text {
+  margin-bottom: 1rem;
+}
+
+
+.main-title,
+.chat-window,
+.chatter-list {
+  background-color: $window;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.chat-window ul, .chatter-list ul{
+  list-style: none;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.chat-window {
+  height: 70vh;
+  overflow: auto;
+  padding-right: 10px;
+}
+
+.chat-window li {
+  clear: both;
+  width: 100%;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+
+.guest-name, .mod-name {
+  font-weight: 700;
+}
+
+.chat, .mod-chat {
+  display: inline-block;
+  float: right;
+  width: 75%;
+  clear: both;
+}
